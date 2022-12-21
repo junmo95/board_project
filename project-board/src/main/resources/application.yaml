@@ -9,10 +9,15 @@ logging:
 
 spring:
   datasource:
+    #mysql 용
     url: jdbc:mysql://localhost:3306/board
     username: junmo
     password: qwer1029
     driver-class-name: com.mysql.cj.jdbc.Driver
+    #h2 용
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    driver-class-name: org.h2.Driver
   jpa:
     defer-datasource-initialization: true
     hibernate.ddl-auto: create
@@ -20,11 +25,13 @@ spring:
     properties:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
-  h2.console.enabled: true
+
+
+  h2.console.enabled: false #일단 h2 가 아닌 mysql 쓸꺼니 h2콘솔 필요없다. - false
   sql.init.mode: always
 
----
-#
+
+
 #spring:
 #  config.activate.on-profile: testdb
 #  datasource:

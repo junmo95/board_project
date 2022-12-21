@@ -23,9 +23,9 @@ import java.util.Set;
         @Index(columnList = "createdAt"),
         @Index(columnList = "createdBy")
 })
-@EntityListeners(AuditingEntityListener.class)
+
 @Entity
-public class Article {
+public class Article extends AuditingFields{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,10 +44,12 @@ public class Article {
     private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
     //이 article 연동된 articleComments 는 중복을 허용하지 않고 모아서 컬랙션으로 보겠다를 의미
 
-    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; //생성일시
-    @CreatedBy @Column(nullable = false, length = 100) private String createdBy; // 생성자
-    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt; //수정일시
-    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; // 수정자
+    //AuditingFields 로 빼서 중복되는 부분 동시처리 - 상속 구조 통해 처리
+//    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; //생성일시
+//    @CreatedBy @Column(nullable = false, length = 100) private String createdBy; // 생성자
+//    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt; //수정일시
+//    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; // 수정자
+
 
 
     //모든 jpa 엔티티는 하이버네이틱 이용, 기본생정자 필요
