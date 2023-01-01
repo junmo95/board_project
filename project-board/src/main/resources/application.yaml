@@ -30,6 +30,11 @@ spring:
   h2.console.enabled: false #일단 h2 가 아닌 mysql 쓸꺼니 h2콘솔 필요없다. - false
   sql.init.mode: always
 
+  data.rest:
+    base-path: /api
+    detection-strategy: annotated
+
+
 
 
 #spring:
