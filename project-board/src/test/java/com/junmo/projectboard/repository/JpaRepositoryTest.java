@@ -2,6 +2,7 @@ package com.junmo.projectboard.repository;
 
 import com.junmo.projectboard.config.JpaConfig;
 import com.junmo.projectboard.domain.Article;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
