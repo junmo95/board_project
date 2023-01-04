@@ -5,16 +5,12 @@ import com.junmo.projectboard.domain.Article;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
-import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 
-//import static org.junit.jupiter.api.Assertions.*;
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 //@ActiveProfiles("testdb") - 내가 설정한 mysql 설정 쓸라면 이거랑 아래꺼 써서 설정(yaml도 설정필요)
 //@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // 이렇게 써도 되고 아니면 yaml 에서 전역설정(여기선 이걸로)
